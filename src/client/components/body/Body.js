@@ -1,8 +1,12 @@
 const React = require('react');
+const Button = require('../common/button/Button');
 
 const Body = () => (
   <div>
-    yeah
+    <Button
+      label="test"
+      type="button"
+    />
   </div>
 );
 

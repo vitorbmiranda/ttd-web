@@ -2,6 +2,7 @@ extends: airbnb
 rules:
   react/jsx-filename-extension: off
   react/jsx-one-expression-per-line: off
+  react/button-has-type: off
 globals:
   document: true
 settings:
