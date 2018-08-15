@@ -1,9 +1,15 @@
 import React from 'react';
+import GameSelector from 'Components/game_selector/GameSelector';
+import LevelsList from 'Components/levels/LevelsList';
 import './style.scss';
 
 const LevelsPane = () => (
   <div id="levels-pane" className="col-2">
-    Levels Pane
+    <div id="game-selectors">
+      <GameSelector label="GE" game="goldeneye" />
+      <GameSelector label="aa" game="perfectdark" />
+    </div>
+    <LevelsList />
   </div>
 );
 

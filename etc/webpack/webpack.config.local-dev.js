@@ -1,6 +1,6 @@
-import webpack from 'webpack';
-import merge from 'webpack-merge';
-import common from './webpack.config.common';
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const common = require('./webpack.config.common');
 
 module.exports = merge(common, {
   mode: 'development',

@@ -3,8 +3,10 @@ rules:
   react/jsx-filename-extension: off
   react/jsx-one-expression-per-line: off
   react/button-has-type: off
+  react/forbid-prop-types: off
 globals:
   document: true
+  fetch: true
 settings:
   import/resolver:
     webpack:
