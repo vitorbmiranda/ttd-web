@@ -2,25 +2,28 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import LevelSelector from '../level_selector/LevelSelector';
 
 class LevelsList extends Component {
   render() {
     const { levels, error } = this.props;
-    console.log(error);
-    if (!levels) return <div>empty!</div>;
-    if (error) return <div>oops something happened!</div>;
+
+    if (error) {
+      return <div>Oops something happened!</div>;
+    } if (!levels) {
+      return <div>Select a game!</div>;
+    }
+
     return _.map(levels, (level => (
-      <div key={level.name}>{level.name}</div>
+      <LevelSelector key={level.key} name={level.name} />
     )));
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    levels: state.levels.data,
-    error: state.levels.error,
-  };
-}
+const mapStateToProps = state => ({
+  levels: state.levels.data,
+  error: state.levels.error,
+});
 
 LevelsList.propTypes = {
   levels: PropTypes.object,

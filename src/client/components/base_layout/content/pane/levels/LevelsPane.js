@@ -6,8 +6,8 @@ import './style.scss';
 const LevelsPane = () => (
   <div id="levels-pane" className="col-2">
     <div id="game-selectors">
-      <GameSelector label="GE" game="goldeneye" />
-      <GameSelector label="aa" game="perfectdark" />
+      <GameSelector label="GE" key="ge" />
+      <GameSelector label="PD" key="pd" />
     </div>
     <LevelsList />
   </div>
