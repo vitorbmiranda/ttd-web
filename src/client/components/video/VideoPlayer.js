@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import YouTube from 'react-youtube';
 
-import VideoSeeker from './VideoSeeker';
+import CheckpointsList from './CheckpointsList';
+
 
 import './style.scss';
 
@@ -60,30 +61,15 @@ class VideoPlayer extends React.Component {
       },
     };
 
-    let seekerOptions;
-    const { loading } = this.state;
-
-    if (loading) {
-      seekerOptions = (<div>Loading...</div>);
-    } else {
-      seekerOptions = (
-        <div>
-          <VideoSeeker label="0:00" position={0} />
-          <VideoSeeker label="0:30" position={30} />
-          <VideoSeeker label="2:00" position={120} />
-        </div>
-      );
-    }
-
     return (
       <div className="video-player">
-        {seekerOptions}
+        <CheckpointsList />
         <div className="embed-responsive embed-responsive-16by9">
           <YouTube
             videoId={tutorial.tutorial.videoId} // fix this!
             opts={opts}
             onReady={this.ready}
-            onStateChange={() => console.log('yay')}
+            // onStateChange={() => console.log('yay')}
           />
         </div>
       </div>

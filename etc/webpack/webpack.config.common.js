@@ -20,7 +20,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      // Babel loader
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

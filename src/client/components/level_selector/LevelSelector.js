@@ -5,12 +5,12 @@ import { fetchTutorials } from 'Components/tutorials/TutorialsActions';
 import Button from 'Components/common/button/Button';
 
 const LevelSelector = (props) => {
-  const { name } = props;
-  return (<Button label={name} onClick={() => props.fetchTutorials(name)} />);
+  const { level } = props;
+  return (<Button label={level} onClick={() => props.fetchTutorials(level)} />);
 };
 
 LevelSelector.propTypes = {
-  name: PropTypes.string.isRequired,
+  level: PropTypes.string.isRequired,
   fetchTutorials: PropTypes.func.isRequired,
 };
 

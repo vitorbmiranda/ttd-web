@@ -15,7 +15,12 @@ class TutorialsList extends Component {
     }
 
     return _.map(tutorials, (tutorial => (
-      <TutorialSelector key={tutorial.id} title={tutorial.title} videoId={tutorial.video_id} />
+      <TutorialSelector
+        key={tutorial.id}
+        id={tutorial.id}
+        title={tutorial.title}
+        videoId={tutorial.video_id}
+      />
     )));
   }
 }

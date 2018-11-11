@@ -2,36 +2,34 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LevelSelector from '../level_selector/LevelSelector';
+import VideoSeeker from './VideoSeeker';
 
 class LevelsList extends Component {
   render() {
-    const { levels, error } = this.props;
+    const { checkpoints, error } = this.props;
 
     if (error) {
       return <div>Oops something happened!</div>;
-    } if (!levels) {
-      return <div>Select a game!</div>;
     }
 
-    return _.map(levels, (level => (
-      <LevelSelector key={level.level} level={level.level} />
+    return _.map(checkpoints, (chk => (
+      <VideoSeeker key={chk.id} label={chk.label} position={chk.seconds} />
     )));
   }
 }
 
 const mapStateToProps = state => ({
-  levels: state.levels.data,
-  error: state.levels.error,
+  checkpoints: state.checkpoints.data,
+  error: state.checkpoints.error,
 });
 
 LevelsList.propTypes = {
-  levels: PropTypes.object,
+  checkpoints: PropTypes.object,
   error: PropTypes.object,
 };
 
 LevelsList.defaultProps = {
-  levels: null,
+  checkpoints: null,
   error: null,
 };
 

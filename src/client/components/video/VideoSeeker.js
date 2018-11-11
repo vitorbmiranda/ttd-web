@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from 'Components/common/button/Button';
-import { seekToPosition } from './VideoPlayeActions';
+import { seekToPosition } from './VideoPlayerActions';
 
 const VideoSeeker = (props) => {
   const { label, position } = props;
