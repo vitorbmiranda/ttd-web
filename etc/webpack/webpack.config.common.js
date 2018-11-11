@@ -1,7 +1,7 @@
-const webpack = require('../../../../Library/Caches/typescript/2.9/node_modules/@types/webpack');
+const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('../../../../Library/Caches/typescript/2.9/node_modules/@types/clean-webpack-plugin');
-const HtmlWebpackPlugin = require('../../../../Library/Caches/typescript/2.9/node_modules/@types/html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATH_ROOT = path.resolve('.');
 const PATH_SOURCE = path.resolve('src/client');
